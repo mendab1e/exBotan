@@ -1,0 +1,24 @@
+[
+  {
+    "request": {
+      "body": "{}",
+      "headers": [],
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.botan.io/track?token=replace%20with_botan_token&uid=13&name="
+    },
+    "response": {
+      "body": "{\"status\" : \"bad request\", \"info\" : \"name required\"}",
+      "headers": {
+        "Server": "nginx/1.9.9",
+        "Date": "Fri, 01 Jan 2016 18:28:20 GMT",
+        "Content-Type": "text/html",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive"
+      },
+      "status_code": 400,
+      "type": "ok"
+    }
+  }
+]

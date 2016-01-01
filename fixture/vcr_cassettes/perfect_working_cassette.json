@@ -1,0 +1,23 @@
+[
+  {
+    "request": {
+      "body": "{\"additional_param\":\"Gabba Gabba Hey!\"}",
+      "headers": [],
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.botan.io/track?token=replace%20with_botan_token&uid=13&name=/hello"
+    },
+    "response": {
+      "body": "{\"status\" : \"accepted\"}",
+      "headers": {
+        "Server": "nginx/1.9.9",
+        "Date": "Fri, 01 Jan 2016 18:28:20 GMT",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "request": {
+      "body": "{}",
+      "headers": [],
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.botan.io/track?token=replace%20with_botan_token&uid=13&name=/awesome_event"
+    },
+    "response": {
+      "body": "nxdomain",
+      "headers": [],
+      "status_code": null,
+      "type": "error"
+    }
+  }
+]
