@@ -1,5 +1,8 @@
 # Botan
 
+[![Build
+Status](https://travis-ci.org/mendab1e/exBotan.svg)](https://travis-ci.org/mendab1e/exBotan)
+
 **TODO: Add description**
 
 ## Installation
