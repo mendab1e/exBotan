@@ -1,7 +1,7 @@
 # exBotan
 
 [![Build
-Status](https://travis-ci.org/mendab1e/exBotan.svg)](https://travis-ci.org/mendab1e/exBotan)
+Status](https://travis-ci.org/mendab1e/exBotan.svg)](https://travis-ci.org/mendab1e/exBotan)[![Hex pm](https://img.shields.io/hexpm/v/botan.svg)](https://hex.pm/packages/botan)
 
 exBotan is an Elixir wrapper for [Botan.io](http://botan.io) – analytics system for your Telegram bots.
 
