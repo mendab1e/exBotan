@@ -3,8 +3,10 @@ defmodule Botan.Mixfile do
 
   def project do
     [app: :botan,
-     version: "0.0.1",
+     version: "0.1.0",
      elixir: "~> 1.1",
+     description: "Elixir wrapper for Botan.io",
+     package: package,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]
@@ -27,10 +29,14 @@ defmodule Botan.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [
-      {:httpoison, "~> 0.8.0"},
-      {:poison, "~> 1.5"},
-      {:exvcr, "~> 0.7", only: :test}
-    ]
+    [{:httpoison, "~> 0.8.0"},
+     {:poison, "~> 1.5"},
+     {:exvcr, "~> 0.7", only: :test}]
+  end
+
+  defp package do
+    [maintainers: ["Timur Yanberdin"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/mendab1e/exBotan"}]
   end
 end
