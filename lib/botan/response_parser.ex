@@ -17,6 +17,10 @@ defmodule Botan.ResponseParser do
     {:ok, %{status: "accepted"}}
   end
 
+  defp _process({:ok, %HTTPoison.Response{body: "Malformed Request-Line"}}) do
+    {:error, %{reason: "Malformed Request-Line", code: 400}}
+  end
+
   defp _process({:ok, %HTTPoison.Response{status_code: code, body: body}}) do
     case Poison.decode!(body, keys: :atoms!) do
       {:ok, %{info: reason}} -> {:error, %{reason: reason, code: code}}

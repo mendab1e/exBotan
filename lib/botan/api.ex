@@ -32,5 +32,6 @@ defmodule Botan.Api do
 
   defp build_url(event, uid) do
     "#{@base_url}track?token=#{@token}&uid=#{uid}&name=#{event}"
+    |> URI.encode
   end
 end
