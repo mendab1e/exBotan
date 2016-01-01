@@ -1,31 +1,36 @@
 defmodule Botan.Api do
   @moduledoc  """
-  Provides support for botan.io actions tracking
+  Botan.io API wrapper module
   """
 
-  @base_url "https://api.botan.io/track"
+  @base_url "https://api.botan.io/"
   @token Application.get_env(:botan, :token)
 
+  alias Botan.ResponseParser
+
+  @doc """
+  Makes API request for track method
+
+  Args:
+  * `event` - name of tracking event
+  * `uid` - user_id
+  * `properties` - optional tracking params
+  """
   def track(event, uid, properties \\ []) do
-    body = properties |> Enum.into(%{}) |> Poison.encode!
+    body = encode_properties(properties)
 
     build_url(event, uid)
     |> HTTPoison.post(body)
-    |> process_response
+    |> ResponseParser.process
+  end
+
+  defp encode_properties(properties) do
+    properties
+    |> Enum.into(%{})
+    |> Poison.encode!
   end
 
   defp build_url(event, uid) do
-    "#{@base_url}?token=#{@token}&uid=#{uid}&name=#{event}"
-  end
-
-  defp process_response(response) do
-    case response do
-      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        {:ok, %{status: "accepted"}}
-      {:ok, %HTTPoison.Response{status_code: code, body: body}} ->
-        {:ok, %{info: reason}} = Poison.decode!(body, keys: :atoms!)
-        {:error, %{reason: reason, code: code}}
-      {:error, %HTTPoison.Error{reason: reason}} -> {:error, %{reason: reason}}
-    end
+    "#{@base_url}track?token=#{@token}&uid=#{uid}&name=#{event}"
   end
 end
