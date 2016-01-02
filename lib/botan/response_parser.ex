@@ -1,6 +1,6 @@
 defmodule Botan.ResponseParser do
   @moduledoc """
-  Parser for Botan.io API responses
+  Parser for API responses
   """
 
   @doc """

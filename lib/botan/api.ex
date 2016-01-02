@@ -1,6 +1,6 @@
 defmodule Botan.Api do
   @moduledoc  """
-  Botan.io API wrapper module
+  Botan.io API wrapper
   """
 
   @base_url "https://api.botan.io/"

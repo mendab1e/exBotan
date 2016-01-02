@@ -31,12 +31,15 @@ defmodule Botan.Mixfile do
   defp deps do
     [{:httpoison, "~> 0.8.0"},
      {:poison, "~> 1.5"},
-     {:exvcr, "~> 0.7", only: :test}]
+     {:exvcr, "~> 0.7", only: :test},
+     {:earmark, "~> 0.1", only: :dev},
+     {:ex_doc, "~> 0.11", only: :dev}]
   end
 
   defp package do
     [maintainers: ["Timur Yanberdin"],
      licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/mendab1e/exBotan"}]
+     links: %{"GitHub" => "https://github.com/mendab1e/exBotan",
+              "Docs" => "http://hexdocs.pm/botan"}]
   end
 end

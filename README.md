@@ -1,7 +1,7 @@
 # exBotan
 
 [![Build
-Status](https://travis-ci.org/mendab1e/exBotan.svg)](https://travis-ci.org/mendab1e/exBotan)[![Hex pm](https://img.shields.io/hexpm/v/botan.svg)](https://hex.pm/packages/botan)
+Status](https://travis-ci.org/mendab1e/exBotan.svg)](https://travis-ci.org/mendab1e/exBotan) [![Hex pm](https://img.shields.io/hexpm/v/botan.svg)](https://hex.pm/packages/botan)
 
 exBotan is an Elixir wrapper for [Botan.io](http://botan.io) – analytics system for your Telegram bots.
 
@@ -45,8 +45,4 @@ iex(2)> Botan.track("/help", 12345)
 {:ok, %{status: "accepted"}}
 ```
 
-Method `#track`  accepts 3 arguments:
-
-* event - name of a tracking event
-* uid - telegram's user id
-* properties - additional tracking params (optional)
+[Documentation](http://hexdocs.pm/botan/Botan.html)
