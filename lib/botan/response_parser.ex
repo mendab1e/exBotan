@@ -3,6 +3,8 @@ defmodule Botan.ResponseParser do
   Parser for API responses
   """
 
+  alias Botan.Model.{Result, Error}
+
   @doc """
   Parse response
 
@@ -14,21 +16,21 @@ defmodule Botan.ResponseParser do
   end
 
   defp _process({:ok, %HTTPoison.Response{status_code: 200}}) do
-    {:ok, %{status: "accepted"}}
+    {:ok, %Result{status: "accepted"}}
   end
 
   defp _process({:ok, %HTTPoison.Response{body: "Malformed Request-Line"}}) do
-    {:error, %{reason: "Malformed Request-Line", code: 400}}
+    {:error, %Error{reason: "Malformed Request-Line", code: 400}}
   end
 
   defp _process({:ok, %HTTPoison.Response{status_code: code, body: body}}) do
     case Poison.decode!(body, keys: :atoms!) do
-      {:ok, %{info: reason}} -> {:error, %{reason: reason, code: code}}
-      %{info: reason} -> {:error, %{reason: reason, code: code}}
+      {:ok, %{info: reason}} -> {:error, %Error{reason: reason, code: code}}
+      %{info: reason} -> {:error, %Error{reason: reason, code: code}}
     end
   end
 
   defp _process({:error, %HTTPoison.Error{reason: reason}}) do
-    {:error, %{reason: reason}}
+    {:error, %Error{reason: reason}}
   end
 end

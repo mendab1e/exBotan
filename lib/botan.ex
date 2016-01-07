@@ -3,6 +3,7 @@ defmodule Botan do
   Provides access to Botan.io API
   """
   alias Botan.Api
+  alias Botan.Model.{Result, Error}
 
   @doc """
   Use this method to track events
@@ -17,6 +18,8 @@ defmodule Botan do
   * `:chat_id` - for example chat id
   * `:some_metric` or some metric
   """
+  @spec track(binary, integer, [{atom, any}]) :: {:ok, Result.t}
+                                               | {:error, Error.t}
   def track(event, uid, properties \\ []) do
     Api.track(event, uid, properties)
   end
