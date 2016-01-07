@@ -3,7 +3,7 @@ defmodule Botan.Mixfile do
 
   def project do
     [app: :botan,
-     version: "0.1.0",
+     version: "0.1.1",
      elixir: "~> 1.1",
      description: "Elixir wrapper for Botan.io",
      package: package,

@@ -11,7 +11,7 @@ exBotan is an Elixir wrapper for [Botan.io](http://botan.io) – analytics syste
 
   ```elixir
   def deps do
-    [{:botan, "~> 0.1.0"}]
+    [{:botan, "~> 0.1.1"}]
   end
   ```
   Run `$ mix deps.get`.
