@@ -4,12 +4,12 @@ defmodule Botan.Mixfile do
   def project do
     [app: :botan,
      version: "0.1.2",
-     elixir: "~> 1.2",
+     elixir: ">= 1.2.0",
      description: "Elixir wrapper for Botan.io",
-     package: package,
+     package: package(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps()]
   end
 
   # Configuration for the OTP application
@@ -29,11 +29,11 @@ defmodule Botan.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:httpoison, "~> 0.9.0"},
-     {:poison, "~> 3.0"},
-     {:exvcr, "~> 0.7", only: :test},
-     {:earmark, "~> 0.1", only: :dev},
-     {:ex_doc, "~> 0.11", only: :dev}]
+    [{:httpoison, "~> 0.11"},
+     {:poison, "~> 3.1"},
+     {:exvcr, "~> 0.8", only: :test},
+     {:earmark, "~> 1.2", only: :dev},
+     {:ex_doc, "~> 0.15", only: :dev}]
   end
 
   defp package do
