@@ -11,7 +11,7 @@ exBotan is an Elixir wrapper for [Botan.io](http://botan.io) – analytics syste
 
   ```elixir
   def deps do
-    [{:botan, "~> 0.1.2"}]
+    [{:botan, "~> 0.2.0"}]
   end
   ```
   Run `$ mix deps.get`.
@@ -31,7 +31,9 @@ Create Botan.io account:
  1. Go to [Botaniobot](https://telegram.me/botaniobot?start=src=github)
  2. Use Add bot command to get a token
 
-Add your Botan.io token In `config/config.exs` like [this](https://github.com/mendab1e/exBotan/blob/master/config/config.exs.example)
+You can set botan.io token as ENV variable `ENV[BOTAN_TOKEN]` or store it
+in `config/config.exs` like [this](https://github.com/mendab1e/exBotan/blob/master/config/config.exs.example)
+
 ```elixir
 config :botan, token: "replace_with_botan_token"
 ```
