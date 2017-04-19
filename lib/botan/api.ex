@@ -4,7 +4,7 @@ defmodule Botan.Api do
   """
 
   @base_url "https://api.botan.io/track?"
-  @token Application.get_env(:botan, :token)
+  @token System.get_env("BOTAN_TOKEN") || Application.get_env(:botan, :token)
 
   alias Botan.ResponseParser
 
